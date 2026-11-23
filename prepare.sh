@@ -17,21 +17,21 @@ fi
 
 # Reuse an existing service, or start one for this user when needed.
 if ! ollama list >/dev/null 2>&1; then
-    mkdir -p excecises/downloads
-    ollama serve >excecises/downloads/ollama.log 2>&1 &
+    mkdir -p exercises/downloads
+    ollama serve >exercises/downloads/ollama.log 2>&1 &
     ollama_pid=$!
     for attempt in {1..30}; do
         if ollama list >/dev/null 2>&1; then
             break
         fi
         if ! kill -0 "$ollama_pid" 2>/dev/null; then
-            echo 'Ollama failed to start. See excecises/downloads/ollama.log.' >&2
+            echo 'Ollama failed to start. See exercises/downloads/ollama.log.' >&2
             exit 1
         fi
         sleep 1
     done
     if ! ollama list >/dev/null 2>&1; then
-        echo 'Ollama did not become ready. See excecises/downloads/ollama.log.' >&2
+        echo 'Ollama did not become ready. See exercises/downloads/ollama.log.' >&2
         exit 1
     fi
 fi
@@ -39,5 +39,5 @@ fi
 python3 -m venv .venv
 .venv/bin/python -m pip install 'torch==2.6.0' --index-url https://download.pytorch.org/whl/cpu
 .venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m excecises.utils
+.venv/bin/python -m exercises.utils
 echo 'Ready. Activate with: source .venv/bin/activate'

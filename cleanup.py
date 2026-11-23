@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-GENERATED = (ROOT / ".venv", ROOT / "excecises" / "downloads")
+GENERATED = (ROOT / ".venv", ROOT / "exercises" / "downloads")
 
 
 def confirm(question: str) -> bool:

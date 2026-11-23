@@ -35,17 +35,17 @@ python main.py
 The runner continues if an exercise fails and reports failures at the end. To run an exercise individually, use its script from the project root:
 
 ```bash
-python excecises/excercise_1.py
-python excecises/excercise_2.py
-python excecises/excercise_3.py
-python excecises/excercise_4.py
+python exercises/excercise_1.py
+python exercises/excercise_2.py
+python exercises/excercise_3.py
+python exercises/excercise_4.py
 ```
 
-Each exercise saves its output to `excecises/results/`. A fresh run replaces that exercise's transcript; the exercise 4 `--sample-only` option appends to it. Review the actual output and prepare your own written answers and screenshot for submission.
+Each exercise saves its output to `exercises/results/`. A fresh run replaces that exercise's transcript; the exercise 4 `--sample-only` option appends to it. Review the actual output and prepare your own written answers and screenshot for submission.
 
 ### 1. Transformer pipelines
 
-The first script classifies three sentences, including a sarcastic one; predicts three possible words for each of two masks; and generates continuations for two prompts. Use `excecises/results/exercise_1.txt` to assess whether the confidence reflects the sarcasm and compare the coherence and relevance of the generated text. In 4–5 sentences, connect the fill-mask predictions to attention and identify which context words might have helped. Those interpretations are hypotheses rather than measured attention weights.
+The first script classifies three sentences, including a sarcastic one; predicts three possible words for each of two masks; and generates continuations for two prompts. Use `exercises/results/exercise_1.txt` to assess whether the confidence reflects the sarcasm and compare the coherence and relevance of the generated text. In 4–5 sentences, connect the fill-mask predictions to attention and identify which context words might have helped. Those interpretations are hypotheses rather than measured attention weights.
 
 ### 2. Local language model
 
@@ -53,26 +53,26 @@ The Ollama script asks a factual question about Python, requests an explanation 
 
 ```bash
 ollama pull qwen3:0.6b
-python excecises/excercise_2.py --model qwen3:0.6b
+python exercises/excercise_2.py --model qwen3:0.6b
 ```
 
-Keep a screenshot showing Ollama running locally and identify a useful and a limited response from `excecises/results/exercise_2.txt`. In 3–5 sentences, discuss what the model did well and where it struggled, and state one privacy advantage of local inference.
+Keep a screenshot showing Ollama running locally and identify a useful and a limited response from `exercises/results/exercise_2.txt`. In 3–5 sentences, discuss what the model did well and where it struggled, and state one privacy advantage of local inference.
 
 ### 3. nanoGPT generation
 
-The third script generates two samples for the initial prompt and compares temperatures 0.3 and 1.2 on another prompt. The samples and the line that calls `model.generate` are saved in `excecises/results/exercise_3.txt`. Inspect `excecises/downloads/nanoGPT/sample.py` to see how the prompt and sampling settings are used. Compare the temperature outputs and, in 3–4 sentences, explain which interface is easier to use and which makes generation easier to inspect: nanoGPT or the Hugging Face pipeline.
+The third script generates two samples for the initial prompt and compares temperatures 0.3 and 1.2 on another prompt. The samples and the line that calls `model.generate` are saved in `exercises/results/exercise_3.txt`. Inspect `exercises/downloads/nanoGPT/sample.py` to see how the prompt and sampling settings are used. Compare the temperature outputs and, in 3–4 sentences, explain which interface is easier to use and which makes generation easier to inspect: nanoGPT or the Hugging Face pipeline.
 
 ### 4. Bonus: fine-tune on Shakespeare
 
-The bonus script prepares Tiny Shakespeare, generates a baseline for `ROMEO:`, fine-tunes GPT-2 for 20 CPU iterations, and samples the checkpoint using the same prompt. The transcript and printed training and validation losses are saved in `excecises/results/exercise_4.txt`.
+The bonus script prepares Tiny Shakespeare, generates a baseline for `ROMEO:`, fine-tunes GPT-2 for 20 CPU iterations, and samples the checkpoint using the same prompt. The transcript and printed training and validation losses are saved in `exercises/results/exercise_4.txt`.
 
 If training is interrupted after nanoGPT has saved a checkpoint, append a sample from it with:
 
 ```bash
-python excecises/excercise_4.py --sample-only
+python exercises/excercise_4.py --sample-only
 ```
 
-If a checkpoint is available, training can be stopped after 10 iterations. To start a new training run, first move the existing `excecises/downloads/nanoGPT/out-shakespeare/ckpt.pt` elsewhere; the script will not overwrite it silently. Compare the baseline and fine-tuned samples for vocabulary, character names, formatting, and style. Record the final printed losses and explain the observed changes in 3–5 sentences, distinguishing broad pretraining from fine-tuning on a smaller dataset. A short run may show little change.
+If a checkpoint is available, training can be stopped after 10 iterations. To start a new training run, first move the existing `exercises/downloads/nanoGPT/out-shakespeare/ckpt.pt` elsewhere; the script will not overwrite it silently. Compare the baseline and fine-tuned samples for vocabulary, character names, formatting, and style. Record the final printed losses and explain the observed changes in 3–5 sentences, distinguishing broad pretraining from fine-tuning on a smaller dataset. A short run may show little change.
 
 ## Cleanup
 

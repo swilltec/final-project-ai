@@ -17,7 +17,7 @@ if (-not (Get-Command ollama -ErrorAction SilentlyContinue)) {
 # Reuse an existing server when available; otherwise start one for this user.
 & ollama list 2>$null | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    $logs = Join-Path $PSScriptRoot 'excecises\downloads'
+    $logs = Join-Path $PSScriptRoot 'exercises\downloads'
     New-Item -ItemType Directory -Force -Path $logs | Out-Null
     $server = Start-Process -FilePath (Get-Command ollama).Source -ArgumentList 'serve' `
         -PassThru -WindowStyle Hidden -RedirectStandardOutput (Join-Path $logs 'ollama.log') `
@@ -29,7 +29,7 @@ if ($LASTEXITCODE -ne 0) {
         if ($LASTEXITCODE -eq 0) { $ready = $true; break }
         if ($server.HasExited) { break }
     }
-    if (-not $ready) { throw 'Ollama did not start. Check excecises\downloads\ollama-error.log.' }
+    if (-not $ready) { throw 'Ollama did not start. Check exercises\downloads\ollama-error.log.' }
 }
 
 if (Get-Command py -ErrorAction SilentlyContinue) {
@@ -44,6 +44,6 @@ $python = Join-Path $PSScriptRoot '.venv\Scripts\python.exe'
 if ($LASTEXITCODE -ne 0) { throw 'Could not install CPU PyTorch.' }
 & $python -m pip install -r requirements.txt
 if ($LASTEXITCODE -ne 0) { throw 'Could not install the Python dependencies.' }
-& $python -m excecises.utils
+& $python -m exercises.utils
 if ($LASTEXITCODE -ne 0) { throw 'Could not prepare the exercise resources.' }
 Write-Host 'Ready. Run the exercises with .venv\Scripts\python.exe main.py'
