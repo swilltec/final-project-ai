@@ -1,0 +1,35 @@
+=== Sentiment analysis ===
+Input: The lecture made a difficult topic surprisingly clear.
+Prediction: POSITIVE; confidence: 0.9960
+
+Input: The application crashed and I lost my work.
+Prediction: NEGATIVE; confidence: 0.9998
+
+Input: Great, another two-hour meeting that could have been an email.
+Prediction: POSITIVE; confidence: 0.9156
+
+=== Fill-mask ===
+Input: The chef stirred the soup with a <mask>.
+  fork: 0.5231 — The chef stirred the soup with a fork.
+  spoon: 0.4137 — The chef stirred the soup with a spoon.
+  whisk: 0.0362 — The chef stirred the soup with a whisk.
+Input: The astronaut looked at Earth from the <mask>.
+  moon: 0.3378 — The astronaut looked at Earth from the moon.
+  spacecraft: 0.0910 — The astronaut looked at Earth from the spacecraft.
+  telescope: 0.0596 — The astronaut looked at Earth from the telescope.
+
+=== Text generation ===
+
+Prompt: A robot entered the library and
+Continuation 1: A robot entered the library and destroyed the computer.
+
+But the robot did not have a problem with the computer, even though it was destroyed. The robots also attacked some of the students.
+
+Nimbus was trying
+Continuation 2: A robot entered the library and was running around in circles using a telescope. The first wave of these waves followed.
+
+The computer then used a simple, but highly accurate mathematical model to tell the team what was going on,
+
+Prompt: The best way to learn a new skill is
+Continuation 1: The best way to learn a new skill is to look in this article, but the articles should also show you how to do it in the game. A good question I have for you would be what is the difference between the "good" skill
+Continuation 2: The best way to learn a new skill is to practice, and practice, and practice on and off the field. What's difficult is doing it for others and not practicing it for yourself. Here's how you do the best work possible to earn

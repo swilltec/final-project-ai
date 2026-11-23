@@ -1,0 +1,74 @@
+
+=== Course prompt, temperature 0.8 ===
+
+Overriding: init_from = gpt2
+Overriding: device = cpu
+Overriding: dtype = float32
+Overriding: start = Artificial intelligence will
+Overriding: num_samples = 2
+Overriding: max_new_tokens = 100
+Overriding: temperature = 0.8
+Overriding: top_k = 50
+loading weights from pretrained gpt: gpt2
+forcing vocab_size=50257, block_size=1024, bias=True
+overriding dropout rate to 0.0
+number of parameters: 123.65M
+No meta.pkl found, assuming GPT-2 encodings...
+Artificial intelligence will soon become all the rage. The technology behind it is described as the "Fusion of Everything" and could soon transform humanity into a machine that can control it, according to a report in the Guardian.
+
+The report will be presented Wednesday as a keynote speech by Intel CEO Tim Cook.
+
+The paper also suggests that the AI could be used to "reinforce the value" of the "precursor of everything" by making it "completely self-aware" based on its
+---------------
+Artificial intelligence will become the norm for computer-mediated decisions, and we may become the norm for human decisions.
+
+The most important problem is that AI will not be able to solve our problems. We may be able to solve our problems in a way that is not yet feasible to humans. This may be an impossibility even for many years, but it will be possible to design a system that will do this. In principle, this is possible, but the technical challenges are immense.
+
+The technical challenges are
+---------------
+
+=== Own prompt, temperature 0.3 ===
+
+Overriding: init_from = gpt2
+Overriding: device = cpu
+Overriding: dtype = float32
+Overriding: start = A scientist opened the mysterious box and
+Overriding: num_samples = 1
+Overriding: max_new_tokens = 100
+Overriding: temperature = 0.3
+Overriding: top_k = 50
+loading weights from pretrained gpt: gpt2
+forcing vocab_size=50257, block_size=1024, bias=True
+overriding dropout rate to 0.0
+number of parameters: 123.65M
+No meta.pkl found, assuming GPT-2 encodings...
+A scientist opened the mysterious box and found a small, metallic object in the middle of the box.
+
+"I'm not sure if this is the same thing as the one I saw in the video, but I think it's the same thing," he said.
+
+The box is a small, black box with a red and blue color scheme.
+
+"It's a very strange thing," he said. "It's a very strange thing."
+
+The box is not the only one that has been found with
+---------------
+
+=== Own prompt, temperature 1.2 ===
+
+Overriding: init_from = gpt2
+Overriding: device = cpu
+Overriding: dtype = float32
+Overriding: start = A scientist opened the mysterious box and
+Overriding: num_samples = 1
+Overriding: max_new_tokens = 100
+Overriding: temperature = 1.2
+Overriding: top_k = 50
+loading weights from pretrained gpt: gpt2
+forcing vocab_size=50257, block_size=1024, bias=True
+overriding dropout rate to 0.0
+number of parameters: 123.65M
+No meta.pkl found, assuming GPT-2 encodings...
+A scientist opened the mysterious box and asked if my name was Peter J, because even then, I knew she was a friend. After saying that, she asked if I knew anyone with a scientific background other than mine. I'm told I have, and she knew I had a very good one. As I said "yeah" as Peter told others I would "not know". By that time I found out how the lab worked, what it looked like, and a nice video showing it before the experiment began again. This time with
+---------------
+
+Generation call, sample.py:87: y = model.generate(x, max_new_tokens, temperature=temperature, top_k=top_k)
